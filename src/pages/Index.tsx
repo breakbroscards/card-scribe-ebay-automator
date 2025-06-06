@@ -16,6 +16,11 @@ const Index = () => {
     }
   }, [user, loading, navigate]);
 
+  const handleNext = () => {
+    console.log('Processing cards...');
+    // TODO: Navigate to processing page or handle card processing
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -47,7 +52,7 @@ const Index = () => {
 
         <div className="space-y-12">
           <AuthSection ebayConnected={false} onConnect={() => console.log('Connect eBay')} />
-          <UploadSection />
+          <UploadSection onNext={handleNext} />
         </div>
       </main>
     </div>
